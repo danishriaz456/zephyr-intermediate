@@ -5,10 +5,11 @@
 LOG_MODULE_REGISTER(homework, LOG_LEVEL_INF);
 
 #define STACK_SIZE            2048
-#define CONTROL_PRIORITY         7
+#define CONTROL_PRIORITY         7    /* Original (change to 2 for corrected run) */
 #define MAINTENANCE_PRIORITY     4
 #define EVENT_PERIOD_MS        250
 #define MAINTENANCE_LOAD_US  45000
+#define CONTROL_DEADLINE_MS     10
 
 struct control_event {
     uint32_t seq;
@@ -42,18 +43,21 @@ static void event_timer_expiry(struct k_timer *timer)
     /* Both threads become ready when the timer interrupt returns. */
     k_sem_give(&maintenance_start);
 
-    /* TODO: Add an application trace event for this sequence. */
+    /* Trace event for event readiness */
+    sys_trace_named_event("control_ready", event.seq, event.ready_ms);
 }
 
 K_TIMER_DEFINE(event_timer, event_timer_expiry, NULL);
 
 /* ================================================================== */
-/*  Control thread                                                   */
+/*  Control thread                                                    */
 /* ================================================================== */
 
 static void control_fn(void *p1, void *p2, void *p3)
 {
     ARG_UNUSED(p1); ARG_UNUSED(p2); ARG_UNUSED(p3);
+
+    uint32_t deadline_misses = 0;
 
     while (true) {
         struct control_event event;
@@ -64,17 +68,25 @@ static void control_fn(void *p1, void *p2, void *p3)
             continue;
         }
 
-        LOG_INF("[CONTROL] processed seq=%u", event.seq);
+        /* Measure latency for every sequence number */
+        uint32_t latency_ms = k_uptime_get_32() - event.ready_ms;
 
-        /* TODO: Define a response-time guarantee. */
-        /* TODO: Measure latency and count every deadline miss. */
-        /* TODO: Rate-limit repeated warning messages. */
-        /* TODO: Add an application trace event for completion. */
+        LOG_INF("[CONTROL] processed seq=%u latency=%u ms", event.seq, latency_ms);
+
+        /* Response-time guarantee check (10 ms deadline) */
+        if (latency_ms > CONTROL_DEADLINE_MS) {
+            deadline_misses++;
+            LOG_WRN_RATELIMIT("[CONTROL] deadline miss seq=%u latency=%u ms misses=%u",
+                              event.seq, latency_ms, deadline_misses);
+        }
+
+        /* Trace event for completion */
+        sys_trace_named_event("control_complete", event.seq, latency_ms);
     }
 }
 
 /* ================================================================== */
-/*  Background maintenance thread                                    */
+/*  Background maintenance thread                                     */
 /* ================================================================== */
 
 static void maintenance_fn(void *p1, void *p2, void *p3)
@@ -98,7 +110,7 @@ K_THREAD_DEFINE(maintenance, STACK_SIZE, maintenance_fn,
 int main(void)
 {
     LOG_INF("=== L6 Homework: Runtime Investigation ===");
-    LOG_INF("Control work must start within 10 ms");
+    LOG_INF("Control work must start within %u ms", CONTROL_DEADLINE_MS);
     LOG_INF("Inspect, measure, trace, explain, and correct the delay");
 
     k_timer_start(&event_timer, K_MSEC(500), K_MSEC(EVENT_PERIOD_MS));
