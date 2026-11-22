@@ -7,7 +7,7 @@ LOG_MODULE_REGISTER(homework, LOG_LEVEL_INF);
 #define STACK_SIZE            2048
 
 #ifndef RUN_CORRECTED_SCHED
-#define RUN_CORRECTED_SCHED   1
+#define RUN_CORRECTED_SCHED   0
 #endif
 
 #if RUN_CORRECTED_SCHED == 0
