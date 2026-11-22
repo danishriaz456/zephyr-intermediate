@@ -5,7 +5,19 @@
 LOG_MODULE_REGISTER(homework, LOG_LEVEL_INF);
 
 #define STACK_SIZE            2048
-#define CONTROL_PRIORITY         7    /* Original (change to 2 for corrected run) */
+
+#ifndef RUN_CORRECTED_SCHED
+#define RUN_CORRECTED_SCHED   1
+#endif
+
+#if RUN_CORRECTED_SCHED == 0
+#define CONTROL_PRIORITY      7    /* Failing run: lower urgency than maintenance (4) */
+#elif RUN_CORRECTED_SCHED == 1
+#define CONTROL_PRIORITY      2    /* Corrected run: higher urgency than maintenance (4) */
+#else
+#error "Invalid RUN_CORRECTED_SCHED value (use 0 for failing run or 1 for corrected run)"
+#endif
+
 #define MAINTENANCE_PRIORITY     4
 #define EVENT_PERIOD_MS        250
 #define MAINTENANCE_LOAD_US  45000
@@ -31,7 +43,7 @@ static void event_timer_expiry(struct k_timer *timer)
     struct control_event event = {
         .seq = seq++,
         .ready_ms = k_uptime_get_32(),
-    };
+        };
 
     /* Timer expiry runs in interrupt context, so never wait here. */
     int ret = k_msgq_put(&control_queue, &event, K_NO_WAIT);
