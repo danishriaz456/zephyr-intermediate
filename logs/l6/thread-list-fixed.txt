@@ -1,0 +1,31 @@
+$ python3 -m serial.tools.miniterm --raw /dev/pts/3 115200
+--- Miniterm on /dev/pts/3  115200,8,N,1 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+
+uart:~$ kernel thread list
+Scheduler: 0 since last call
+Threads:
+ 0x8065620 maintenance
+        options: 0x0, priority: 4 timeout: 0
+        state: pending, entry: 0x8049c52
+        stack size 2048, unused 2024, usage 24 / 2048 (1 %)
+
+ 0x80656e0 control   
+        options: 0x0, priority: 2 timeout: 0
+        state: pending, entry: 0x8049c78
+        stack size 2048, unused 2024, usage 24 / 2048 (1 %)
+
+*0x80660a0 shell_uart
+        options: 0x0, priority: 14 timeout: 0
+        state: queued, entry: 0x8053210
+        stack size 2048, unused 2024, usage 24 / 2048 (1 %)
+
+ 0x80657a0 logging   
+        options: 0x0, priority: 14 timeout: 0
+        state: pending, entry: 0x804cc3c
+        stack size 768, unused 744, usage 24 / 768 (3 %)
+
+ 0x8066780 idle      
+        options: 0x1, priority: 15 timeout: 0
+        state: , entry: 0x8056c56
+        stack size 256, unused 232, usage 24 / 256 (9 %)
