@@ -1,0 +1,64 @@
+*** Booting Zephyr OS build v4.4.0-13164-g77c6b14c4ba6 ***
+[00:00:00.000,000] <inf> homework: === L6 Homework: Runtime Investigation ===
+[00:00:00.000,000] <inf> homework: Control work must start within 10 ms
+[00:00:00.000,000] <inf> homework: Inspect, measure, trace, explain, and correct the delay
+[00:00:00.555,000] <inf> homework: [CONTROL] processed seq=0 latency=40 ms
+[00:00:00.805,000] <inf> homework: [CONTROL] processed seq=1 latency=40 ms
+[00:00:01.055,000] <inf> homework: [CONTROL] processed seq=2 latency=40 ms
+[00:00:01.055,000] <wrn> homework: Skipped 2 messages
+[00:00:01.055,000] <wrn> homework: [CONTROL] deadline miss seq=2 latency=40 ms misses=3
+[00:00:01.305,000] <inf> homework: [CONTROL] processed seq=3 latency=40 ms
+[00:00:01.555,000] <inf> homework: [CONTROL] processed seq=4 latency=40 ms
+[00:00:01.805,000] <inf> homework: [CONTROL] processed seq=5 latency=40 ms
+[00:00:02.055,000] <inf> homework: [CONTROL] processed seq=6 latency=40 ms
+[00:00:02.055,000] <wrn> homework: Skipped 3 messages
+[00:00:02.055,000] <wrn> homework: [CONTROL] deadline miss seq=6 latency=40 ms misses=7
+[00:00:02.305,000] <inf> homework: [CONTROL] processed seq=7 latency=40 ms
+[00:00:02.555,000] <inf> homework: [CONTROL] processed seq=8 latency=40 ms
+[00:00:02.805,000] <inf> homework: [CONTROL] processed seq=9 latency=40 ms
+[00:00:03.055,000] <inf> homework: [CONTROL] processed seq=10 latency=40 ms
+[00:00:03.055,000] <wrn> homework: Skipped 3 messages
+[00:00:03.055,000] <wrn> homework: [CONTROL] deadline miss seq=10 latency=40 ms misses=11
+[00:00:03.305,000] <inf> homework: [CONTROL] processed seq=11 latency=40 ms
+[00:00:03.555,000] <inf> homework: [CONTROL] processed seq=12 latency=40 ms
+[00:00:03.805,000] <inf> homework: [CONTROL] processed seq=13 latency=40 ms
+[00:00:04.055,000] <inf> homework: [CONTROL] processed seq=14 latency=40 ms
+[00:00:04.055,000] <wrn> homework: Skipped 3 messages
+[00:00:04.055,000] <wrn> homework: [CONTROL] deadline miss seq=14 latency=40 ms misses=15
+[00:00:04.305,000] <inf> homework: [CONTROL] processed seq=15 latency=40 ms
+[00:00:04.555,000] <inf> homework: [CONTROL] processed seq=16 latency=40 ms
+[00:00:04.805,000] <inf> homework: [CONTROL] processed seq=17 latency=40 ms
+[00:00:05.055,000] <inf> homework: [CONTROL] processed seq=18 latency=40 ms
+[00:00:05.055,000] <wrn> homework: Skipped 3 messages
+[00:00:05.055,000] <wrn> homework: [CONTROL] deadline miss seq=18 latency=40 ms misses=19
+[00:00:05.305,000] <inf> homework: [CONTROL] processed seq=19 latency=40 ms
+[00:00:05.555,000] <inf> homework: [CONTROL] processed seq=20 latency=40 ms
+[00:00:05.805,000] <inf> homework: [CONTROL] processed seq=21 latency=40 ms
+[00:00:06.055,000] <inf> homework: [CONTROL] processed seq=22 latency=40 ms
+[00:00:06.055,000] <wrn> homework: Skipped 3 messages
+[00:00:06.055,000] <wrn> homework: [CONTROL] deadline miss seq=22 latency=40 ms misses=23
+[00:00:06.305,000] <inf> homework: [CONTROL] processed seq=23 latency=40 ms
+[00:00:06.555,000] <inf> homework: [CONTROL] processed seq=24 latency=40 ms
+[00:00:06.805,000] <inf> homework: [CONTROL] processed seq=25 latency=40 ms
+[00:00:07.055,000] <inf> homework: [CONTROL] processed seq=26 latency=40 ms
+[00:00:07.055,000] <wrn> homework: Skipped 3 messages
+[00:00:07.055,000] <wrn> homework: [CONTROL] deadline miss seq=26 latency=40 ms misses=27
+[00:00:07.305,000] <inf> homework: [CONTROL] processed seq=27 latency=40 ms
+[00:00:07.555,000] <inf> homework: [CONTROL] processed seq=28 latency=40 ms
+[00:00:07.805,000] <inf> homework: [CONTROL] processed seq=29 latency=40 ms
+[00:00:08.055,000] <inf> homework: [CONTROL] processed seq=30 latency=40 ms
+[00:00:08.055,000] <wrn> homework: Skipped 3 messages
+[00:00:08.055,000] <wrn> homework: [CONTROL] deadline miss seq=30 latency=40 ms misses=31
+[00:00:08.305,000] <inf> homework: [CONTROL] processed seq=31 latency=40 ms
+[00:00:08.555,000] <inf> homework: [CONTROL] processed seq=32 latency=40 ms
+[00:00:08.805,000] <inf> homework: [CONTROL] processed seq=33 latency=40 ms
+[00:00:09.055,000] <inf> homework: [CONTROL] processed seq=34 latency=40 ms
+[00:00:09.055,000] <wrn> homework: Skipped 3 messages
+[00:00:09.055,000] <wrn> homework: [CONTROL] deadline miss seq=34 latency=40 ms misses=35
+[00:00:09.305,000] <inf> homework: [CONTROL] processed seq=35 latency=40 ms
+[00:00:09.555,000] <inf> homework: [CONTROL] processed seq=36 latency=40 ms
+[00:00:09.805,000] <inf> homework: [CONTROL] processed seq=37 latency=40 ms
+[00:00:10.055,000] <inf> homework: [CONTROL] processed seq=38 latency=40 ms
+[00:00:10.055,000] <wrn> homework: Skipped 3 messages
+[00:00:10.055,000] <wrn> homework: [CONTROL] deadline miss seq=38 latency=40 ms misses=39
+[00:00:10.305,000] <inf> homework: [CONTROL] processed seq=39 latency=40 ms
