@@ -1,0 +1,29 @@
+*** Booting Zephyr OS build v4.4.0-13164-g77c6b14c4ba6 ***
+[00:00:00.000,000] <inf> homework: === L6 Homework: Runtime Investigation ===
+[00:00:00.000,000] <inf> homework: Control work must start within 10 ms
+[00:00:00.000,000] <inf> homework: Inspect, measure, trace, explain, and correct the delay
+[00:00:00.510,000] <inf> homework: [CONTROL] processed seq=0 latency=0 ms
+[00:00:00.760,000] <inf> homework: [CONTROL] processed seq=1 latency=0 ms
+[00:00:01.010,000] <inf> homework: [CONTROL] processed seq=2 latency=0 ms
+[00:00:01.260,000] <inf> homework: [CONTROL] processed seq=3 latency=0 ms
+[00:00:01.510,000] <inf> homework: [CONTROL] processed seq=4 latency=0 ms
+[00:00:01.760,000] <inf> homework: [CONTROL] processed seq=5 latency=0 ms
+[00:00:02.010,000] <inf> homework: [CONTROL] processed seq=6 latency=0 ms
+[00:00:02.260,000] <inf> homework: [CONTROL] processed seq=7 latency=0 ms
+[00:00:02.510,000] <inf> homework: [CONTROL] processed seq=8 latency=0 ms
+[00:00:02.760,000] <inf> homework: [CONTROL] processed seq=9 latency=0 ms
+[00:00:03.010,000] <inf> homework: [CONTROL] processed seq=10 latency=0 ms
+[00:00:03.260,000] <inf> homework: [CONTROL] processed seq=11 latency=0 ms
+[00:00:03.510,000] <inf> homework: [CONTROL] processed seq=12 latency=0 ms
+[00:00:03.760,000] <inf> homework: [CONTROL] processed seq=13 latency=0 ms
+[00:00:04.010,000] <inf> homework: [CONTROL] processed seq=14 latency=0 ms
+[00:00:04.260,000] <inf> homework: [CONTROL] processed seq=15 latency=0 ms
+[00:00:04.510,000] <inf> homework: [CONTROL] processed seq=16 latency=0 ms
+[00:00:04.760,000] <inf> homework: [CONTROL] processed seq=17 latency=0 ms
+[00:00:05.010,000] <inf> homework: [CONTROL] processed seq=18 latency=0 ms
+[00:00:05.260,000] <inf> homework: [CONTROL] processed seq=19 latency=0 ms
+[00:00:05.510,000] <inf> homework: [CONTROL] processed seq=20 latency=0 ms
+[00:00:05.760,000] <inf> homework: [CONTROL] processed seq=21 latency=0 ms
+[00:00:06.010,000] <inf> homework: [CONTROL] processed seq=22 latency=0 ms
+[00:00:06.260,000] <inf> homework: [CONTROL] processed seq=23 latency=0 ms
+[00:00:06.510,000] <inf> homework: [CONTROL] processed seq=24 latency=0 ms
